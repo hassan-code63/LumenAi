@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumen — Every AI model, in one beautiful place</title>
+  <meta name="description" content="Lumen is a curated directory of the world's best AI assistants. Compare models and start a real conversation in a single click — no accounts, no friction." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Manrope:wght@300..800&display=swap" rel="stylesheet" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2312251a'/%3E%3Cpath d='M32 12l4.6 13.4L50 30l-13.4 4.6L32 48l-4.6-13.4L14 30l13.4-4.6z' fill='%23ffd9b0'/%3E%3C/svg%3E" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Loader -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-mark">
+      <span class="loader-spark">✦</span>
+      <span class="loader-word">Lumen</span>
+    </div>
+  </div>
+
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#home" class="brand" aria-label="Lumen home">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span class="brand-word">Lumen</span>
+      </a>
+
+      <nav class="nav" id="primaryNav" aria-label="Main navigation">
+        <a href="#models">Models</a>
+        <a href="#why">Why Lumen</a>
+        <a href="#how">How it works</a>
+        <a href="#faq">FAQ</a>
+        <a href="#models" class="btn btn-ink nav-cta">
+          Explore models
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
+        </a>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="blob blob-mint" aria-hidden="true"></div>
+      <div class="blob blob-peach" aria-hidden="true"></div>
+
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow hero-eyebrow reveal">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            Curated AI directory · 2026 edition
+          </p>
+
+          <h1 class="hero-title reveal">
+            Every AI model,<br />
+            in <em>one beautiful place.</em>
+          </h1>
+
+          <p class="hero-lead reveal">
+            Discover the world's finest AI assistants, compare them at a glance,
+            and start a real conversation in a single click — no sign-ups, no friction.
+          </p>
+
+          <form class="hero-search reveal" id="heroSearchForm" role="search">
+            <span class="search-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.6-3.6" /></svg>
+            </span>
+            <input
+              type="search"
+              id="heroSearch"
+              name="q"
+              placeholder="Search models — try “coding” or “Claude”"
+              autocomplete="off"
+              aria-label="Search AI models"
+            />
+            <button type="submit" class="btn btn-ink">
+              Search
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
+            </button>
+          </form>
+
+          <div class="hero-actions reveal">
+            <a href="#models" class="btn btn-ghost">
+              Browse the collection
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6" /></svg>
+            </a>
+          </div>
+
+          <dl class="hero-stats reveal">
+            <div>
+              <dt>12</dt>
+              <dd>Hand-picked models</dd>
+            </div>
+            <div>
+              <dt>6</dt>
+              <dd>Use-case categories</dd>
+            </div>
+            <div>
+              <dt>0</dt>
+              <dd>Sign-ups required</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="chat-mock" aria-hidden="true">
+            <div class="chat-head">
+              <span class="chat-avatar">✦</span>
+              <div class="chat-meta">
+                <strong>Lumen Assistant</strong>
+                <span><i class="status-dot"></i> online</span>
+              </div>
+              <span class="chat-dots">•••</span>
+            </div>
+
+            <div class="chat-body">
+              <div class="bubble bubble-user">Which model is best for coding?</div>
+              <div class="bubble bubble-ai">
+                Claude and DeepSeek both excel at code.
+                Pick one and you're chatting in a single click.
+                <span class="typing"><i></i><i></i><i></i></span>
+              </div>
+              <div class="bubble bubble-user bubble-short">Open Claude ↗</div>
+              <div class="bubble bubble-ai bubble-success">
+                <span class="check">✓</span> Opening the official chat…
+              </div>
+            </div>
+
+            <div class="chat-input">
+              <span>Ask anything…</span>
+              <span class="send">↗</span>
+            </div>
+          </div>
+
+          <div class="float-badge badge-top">
+            <span class="badge-spark">✦</span> Zero friction
+          </div>
+          <div class="float-badge badge-bottom">
+            <span class="badge-check">✓</span> Official chats
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>ChatGPT</span><span class="sep">✦</span>
+        <span>Claude</span><span class="sep">✦</span>
+        <span>Gemini</span><span class="sep">✦</span>
+        <span>Perplexity</span><span class="sep">✦</span>
+        <span>Grok</span><span class="sep">✦</span>
+        <span>Copilot</span><span class="sep">✦</span>
+        <span>DeepSeek</span><span class="sep">✦</span>
+        <span>Mistral</span><span class="sep">✦</span>
+        <span>Midjourney</span><span class="sep">✦</span>
+        <span>NotebookLM</span><span class="sep">✦</span>
+        <span>ChatGPT</span><span class="sep">✦</span>
+        <span>Claude</span><span class="sep">✦</span>
+        <span>Gemini</span><span class="sep">✦</span>
+        <span>Perplexity</span><span class="sep">✦</span>
+        <span>Grok</span><span class="sep">✦</span>
+        <span>Copilot</span><span class="sep">✦</span>
+        <span>DeepSeek</span><span class="sep">✦</span>
+        <span>Mistral</span><span class="sep">✦</span>
+        <span>Midjourney</span><span class="sep">✦</span>
+        <span>NotebookLM</span><span class="sep">✦</span>
+      </div>
+    </div>
+
+    <!-- Models -->
+    <section class="section models" id="models">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow reveal"><span class="eyebrow-line"></span> The collection</p>
+          <h2 class="section-title reveal">Pick your intelligence.</h2>
+          <p class="section-lead reveal">
+            Filter by what you need. Every card opens the model's official chat
+            in a new tab — instantly.
+          </p>
+        </header>
+
+        <div class="toolbar reveal">
+          <div class="chips" id="filters" role="group" aria-label="Filter models by category">
+            <button class="chip is-active" data-filter="all" type="button">All</button>
+            <button class="chip" data-filter="chat" type="button">Chat</button>
+            <button class="chip" data-filter="coding" type="button">Coding</button>
+            <button class="chip" data-filter="research" type="button">Research</button>
+            <button class="chip" data-filter="writing" type="button">Writing</button>
+            <button class="chip" data-filter="image" type="button">Image</button>
+            <button class="chip chip-saved" data-filter="saved" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 20.9l1.1-6.5L2.6 9.8l6.5-.9z" /></svg>
+              Saved <span class="chip-count" id="savedCount" hidden>0</span>
+            </button>
+          </div>
+
+          <div class="toolbar-search">
+            <span class="search-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.6-3.6" /></svg>
+            </span>
+            <input type="search" id="modelSearch" placeholder="Search by name or skill…" autocomplete="off" aria-label="Search the model collection" />
+          </div>
+        </div>
+
+        <p class="results-line reveal" aria-live="polite">
+          <span id="resultsCount">12</span> models available
+          <span class="results-note">· click a card to open its chat</span>
+        </p>
+
+        <div class="model-grid" id="modelGrid">
+          <!-- ChatGPT -->
+          <article class="model-card reveal" data-id="chatgpt" data-name="chatgpt openai gpt" data-category="chat writing research">
+            <button class="save-btn" type="button" aria-label="Save ChatGPT" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 20.9l1.1-6.5L2.6 9.8l6.5-.9z" /></svg>
+            </button>
+            <a class="model-link" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer" aria-label="Open ChatGPT chat in a new tab">
+              <span class="model-logo tone-mint">GPT</span>
+              <h3>ChatGPT</h3>
+              <p>The all-rounder for writing, reasoning and everyday tasks.</p>
+              <ul class="tags"><li>Chat</li><li>Writing</li></ul>
+              <span class="card-cta">
+                Open chat
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
+              </span>
+            </a>
+          </article>
+
+          <!-- Claude -->
+          <article class="model-card reveal" data-id="claude" data-name="claude anthropic" data-category="chat coding writing">
+            <button class="save-btn" type="button" aria-label="Save Claude" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 20.9l1.1-6.5L2.6 9.8l6.5-.9z" /></svg>
+            </button>
+            <a class="model-link" href="https://claude.ai/new" target="_blank" rel="noopener noreferrer" aria-label="Open Claude chat in a new tab">
+              <span class="model-logo tone-peach">CL</span>
+              <h3>Claude</h3>
+              <p>Thoughtful long-form answers and exceptional code review.</p>
+              <ul class="tags"><li>Chat</li><li>Coding</li></ul>
+              <span class="card-cta">
+                Open chat
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
+              </span>
+            </a>
+          </article>
+
+          <!-- Gemini -->
+          <article class="model-card reveal" data-id="gemini" data-name="gemini google bard" data-category="chat research">
+            <button class="save-btn" type="button" aria-label="Save Gemini" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 20.9l1.1-6.5L2.6 9.8l6.5-.9z" /></svg>
+            </button>
+            <a class="model-link" href="https://gemini.google.com/app" target="_blank" rel="noopener noreferrer" aria-label="Open Gemini chat in a new tab">
+              <span class="model-logo tone-mint">GM</span>
+              <h3>Gemini</h3>
+              <p>Google-powered research with live web grounding.</p>
+              <ul class="tags"><li>Research</li><li>Chat</li></ul>
+              <span class="card-cta">
+                Open chat
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
+              </span>
+            </a>
+          </article>
+
+          <!-- Perplexity -->
+          <article class="model-card reveal" data-id="perplexity" data-name="perplexity search" data-category="research">
+            <button class="save-btn" type="button" aria-label="Save Perplexity" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 20.9l1.1-6.5L2.6 9.8l6.5-.9z" /></svg>
+            </button>
+            <a class="model-link" href="https://www.perplexity.ai/" target="_blank" rel="noopener noreferrer" aria-label="Open Perplexity chat in a new tab">
+              <span class="model-logo tone-peach">PX</span>
+              <h3>Perplexity</h3>
+              <p>Answers with sources, citations and live search.</p>
+              <ul class="tags"><li>Research</li></ul>
+              <span class="card-cta">
+                Open chat
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
+              </span>
+            </a>
+          </article>
+
+          <!-- Grok -->
+          <article class="model-card reveal" data-id="grok" data-name="grok xai" data-category="chat research">
+            <button class="save-btn" type="button" aria-label="Save Grok" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 20.9l1.1-6.5L2.6 9.8l6.5-.9z" /></svg>
+            </button>
+            <a class="model-link" href="https://grok.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Grok chat in a new tab">
+              <span class="model-logo tone-mint">GK</span>
+              <h3>Grok</h3>
+              <p>Fast, witty assistant with real-time context.</p>
+              <ul class="tags"><li>Chat</li><li>Research</li></ul>
+              <span class="card-cta">
+                Open chat
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
+              </span>
+            </a>
+          </article>
+
+          <!-- Copilot -->
+          <article class="model-card reveal" data-id="copilot" data-name="copilot microsoft bing" data-category="chat coding">
+            <button class="save-btn" type="button" aria-label="Save Copilot" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 20.9l1.1-6.5L2.6 9.8l6.5-.9z" /></svg>
+            </button>
+            <a class="model-link" href="https://copilot.microsoft.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Copilot chat in a new tab">
+              <span class="model-logo tone-peach">CP</span>
+              <h3>Copilot</h3>
+              <p>Microsoft's assistant for work, code and the web.</p>
+              <ul class="tags"><li>Chat</li><li>Coding</li></ul>
+              <span class="card-cta">
+                Open chat
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
+              </span>
+            </a>
+          </article>
+
+          <!-- DeepSeek -->
+          <article class="model-card reveal" data-id="deepseek" data-name="deepseek reasoner" data-category="coding research">
+            <button class="save-btn" type="button" aria-label="Save DeepSeek" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 20.9l1.1-6.5L2.6 9.8l6.5-.9z" /></svg>
+            </button>
+            <a class="model-link" href="https://chat.deepseek.com/" target="_blank" rel="noopener noreferrer" aria-label="Open DeepSeek chat in a new tab">
+              <span class="model-logo tone-mint">DS</span>
+              <h3>DeepSeek</h3>
+              <p>Open reasoning models built for developers.</p>
+              <ul class="tags"><li>Coding</li><li>Research</li></ul>
+              <span class="card-cta">
+                Open chat
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
+              </span>
+            </a>
+          </article>
+
+          <!-- Mistral -->
+          <article class="model-card reveal" data-id="mistral" data-name="mistral le chat" data-category="chat coding">
+            <button class="save-btn" type="button" aria-label="Save Mistral" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 20.9l1.1-6.5L2.6 9.8l6.5-.9z" /></svg>
+            </button>
+            <a class="model-link" href="https://chat.mistral.ai/chat" target="_blank" rel="noopener noreferrer" aria-label="Open Mistral chat in a new tab">
+              <span class="model-logo tone-peach">MS</span>
+              <h3>Mistral</h3>
+              <p>European models with speed and open weights.</p>
+              <ul class="tags"><li>Chat</li><li>Coding</li></ul>
+              <span class="card-cta">
+                Open chat
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
+              </span>
+            </a>
+          </article>
+
+          <!-- Midjourney -->
+          <article class="model-card reveal" data-id="midjourney" data-name="midjourney image art" data-category="image">
+            <button class="save-btn" type="button" aria-label="Save Midjourney" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 20.9l1.1-6.5L2.6 9.8l6.5-.9z" /></svg>
+            </button>
+            <a class="model-link" href="https://www.midjourney.com/imagine" target="_blank" rel="noopener noreferrer" aria-label="Open Midjourney in a new tab">
+              <span class="model-logo tone-mint">MJ</span>
+              <h3>Midjourney</h3>
+              <p>Cinematic image generation from a single prompt.</p>
+              <ul class="tags"><li>Image</li></ul>
+              <span class="card-cta">
+                Open chat
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
+              </span>
+            </a>
+          </article>
+
+          <!-- Leonardo -->
+          <article class="model-card reveal" data-id="leonardo" data-name="leonardo ai image" data-category="image">
+            <button class="save-btn" type="button" aria-label="Save Leonardo" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 20.9l1.1-6.5L2.6 9.8l6.5-.9z" /></svg>
+            </button>
+            <a class="model-link" href="https://app.leonardo.ai/" target="_blank" rel="noopener noreferrer" aria-label="Open Leonardo AI in a new tab">
+              <span class="model-logo tone-peach">LN</span>
+              <h3>Leonardo</h3>
+              <p>Production-ready visuals, styles and upscaling.</p>
+              <ul class="tags"><li>Image</li></ul>
+              <span class="card-cta">
+                Open chat
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
+              </span>
+            </a>
+          </article>
+
+          <!-- NotebookLM -->
+          <article class="model-card reveal" data-id="notebooklm" data-name="notebooklm notebook google notes" data-category="research writing">
+            <button class="save-btn" type="button" aria-label="Save NotebookLM" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 20.9l1.1-6.5L2.6 9.8l6.5-.9z" /></svg>
+            </button>
+            <a class="model-link" href="https://notebooklm.google.com/" target="_blank" rel="noopener noreferrer" aria-label="Open NotebookLM in a new tab">
+              <span class="model-logo tone-mint">NB</span>
+              <h3>NotebookLM</h3>
+              <p>Turn documents into notes, summaries and audio.</p>
+              <ul class="tags"><li>Research</li><li>Writing</li></ul>
+              <span class="card-cta">
+                Open chat
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
+              </span>
+            </a>
+          </article>
+
+          <!-- Poe -->
+          <article class="model-card reveal" data-id="poe" data-name="poe quora bots" data-category="chat research writing">
+            <button class="save-btn" type="button" aria-label="Save Poe" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 20.9l1.1-6.5L2.6 9.8l6.5-.9z" /></svg>
+            </button>
+            <a class="model-link" href="https://poe.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Poe in a new tab">
+              <span class="model-logo tone-peach">PO</span>
+              <h3>Poe</h3>
+              <p>One inbox for many models and custom bots.</p>
+              <ul class="tags"><li>Chat</li><li>Research</li></ul>
+              <span class="card-cta">
+                Open chat
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
+              </span>
+            </a>
+          </article>
+        </div>
+
+        <div class="empty-state" id="emptyState" hidden>
+          <span class="empty-mark">✦</span>
+          <h3 id="emptyTitle">Nothing here yet</h3>
+          <p id="emptyText">Try a different keyword or reset the filters.</p>
+          <button class="btn btn-ghost" id="resetFilters" type="button">Reset filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why -->
+    <section class="section why" id="why">
+      <div class="container">
+        <header class="section-head section-head-center">
+          <p class="eyebrow reveal"><span class="eyebrow-line"></span> Why Lumen</p>
+          <h2 class="section-title reveal">Less searching.<br />More creating.</h2>
+        </header>
+
+        <div class="why-grid">
+          <article class="why-card reveal">
+            <span class="why-icon tone-mint">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4.5 13H11l-1 9 8.5-11H12z" /></svg>
+            </span>
+            <h3>One-click launch</h3>
+            <p>No onboarding, no accounts. Every card opens straight into the live chat on the official site.</p>
+          </article>
+
+          <article class="why-card reveal">
+            <span class="why-icon tone-peach">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 20.9l1.1-6.5L2.6 9.8l6.5-.9z" /></svg>
+            </span>
+            <h3>Hand-picked only</h3>
+            <p>A short, curated list. We include the models that are genuinely worth your time — nothing else.</p>
+          </article>
+
+          <article class="why-card reveal">
+            <span class="why-icon tone-mint">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.6-3 8.2-7 10-4-1.8-7-5.4-7-10V6z" /><path d="m9 12 2 2 4-4" /></svg>
+            </span>
+            <h3>Private by design</h3>
+            <p>We never store your conversations. Chats live with the provider; only your favourites stay in this browser.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- How -->
+    <section class="section how" id="how">
+      <div class="container">
+        <header class="section-head section-head-center">
+          <p class="eyebrow reveal"><span class="eyebrow-line"></span> How it works</p>
+          <h2 class="section-title reveal">Three steps. That's the whole flow.</h2>
+        </header>
+
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step-number">01</span>
+            <h3>Browse</h3>
+            <p>Scan the collection and filter by the task in front of you.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-number">02</span>
+            <h3>Choose</h3>
+            <p>See each model's strengths at a glance, then pick your fit.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-number">03</span>
+            <h3>Chat</h3>
+            <p>Click once and the official chat opens in a new tab. That's it.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq" id="faq">
+      <div class="container faq-wrap">
+        <header class="section-head section-head-center">
+          <p class="eyebrow reveal"><span class="eyebrow-line"></span> Good to know</p>
+          <h2 class="section-title reveal">Questions, answered.</h2>
+        </header>
+
+        <div class="faq-list" id="faqList">
+          <div class="faq-item reveal">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Is Lumen free to use?</span>
+              <span class="faq-plus" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer">
+              <div><p>Yes. Browsing the collection and launching chats is completely free. Individual providers may ask you to sign in or offer paid plans for advanced features.</p></div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Do I need an account?</span>
+              <span class="faq-plus" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer">
+              <div><p>Not for Lumen. Some providers require you to create an account before chatting, and that happens on their site — never here.</p></div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Where do the conversations happen?</span>
+              <span class="faq-plus" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer">
+              <div><p>Every card opens the model's official website in a new browser tab. You talk to the model directly, on the provider's own platform.</p></div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Are my chats stored on Lumen?</span>
+              <span class="faq-plus" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer">
+              <div><p>No. Lumen has no chat backend. The only thing saved locally is your list of favourite models, kept in your browser.</p></div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>How often is the collection updated?</span>
+              <span class="faq-plus" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer">
+              <div><p>Roughly once a month. We add new models, retire the outdated ones, and keep the descriptions honest.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-band reveal">
+          <div class="cta-orb orb-one" aria-hidden="true"></div>
+          <div class="cta-orb orb-two" aria-hidden="true"></div>
+          <p class="eyebrow"><span class="eyebrow-line"></span> Ready when you are</p>
+          <h2>Your next idea is<br /><em>one click away.</em></h2>
+          <p>Twelve models, six categories, zero friction. Find the right mind for the job.</p>
+          <a href="#models" class="btn btn-ink btn-lg">
+            Explore the models
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="brand brand-light">
+          <span class="brand-mark" aria-hidden="true">✦</span>
+          <span class="brand-word">Lumen</span>
+        </a>
+        <p>A quiet, curated doorway to the world's best AI assistants. Built for people who'd rather create than search.</p>
+        <span class="footer-badge">Curated · Independent · 2026</span>
+      </div>
+
+      <nav class="footer-col" aria-label="Collection links">
+        <h4>Collection</h4>
+        <a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">ChatGPT</a>
+        <a href="https://claude.ai/new" target="_blank" rel="noopener noreferrer">Claude</a>
+        <a href="https://gemini.google.com/app" target="_blank" rel="noopener noreferrer">Gemini</a>
+        <a href="https://www.perplexity.ai/" target="_blank" rel="noopener noreferrer">Perplexity</a>
+      </nav>
+
+      <nav class="footer-col" aria-label="Site links">
+        <h4>Explore</h4>
+        <a href="#models">All models</a>
+        <a href="#why">Why Lumen</a>
+        <a href="#how">How it works</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="footer-col footer-news">
+        <h4>Stay in the loop</h4>
+        <p>One short email a month. New models, no noise.</p>
+        <form class="news-form" id="newsForm" novalidate>
+          <label class="sr-only" for="newsEmail">Email address</label>
+          <input type="email" id="newsEmail" name="email" placeholder="you@studio.com" autocomplete="email" required />
+          <button type="submit" aria-label="Subscribe to the newsletter">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </button>
+        </form>
+        <span class="news-note">No spam. Unsubscribe anytime.</span>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© <span id="year">2026</span> Lumen. A demo directory — all chats open on official provider sites.</p>
+      <div class="footer-links">
+        <a href="#home">Back to top</a>
+        <span aria-hidden="true">✦</span>
+        <a href="#models">Models</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" type="button" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6" /></svg>
+  </button>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
